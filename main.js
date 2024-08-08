@@ -8,23 +8,36 @@ function appendGithubIcon() {
   link.target = '_blank'
   link.title = 'View this repository on the CodeWorks® Academy github'
 
-  const icon = document.createElement('i')
-  icon.classList.add('mdi', 'mdi-github')
-  const styles = {
+  const linkStyles = {
     position: 'fixed',
     bottom: 0,
     right: 0,
     margin: '1rem',
-    'font-size': '2rem',
-    color: 'white',
-    'background-color': 'black',
-    'border-radius': '1000%',
+    height: '40px',
     padding: '3px',
+    display: 'flex',
+    'aspect-ratio': '1/1',
+    'background-color': 'black',
+    'border-radius': '50%',
+    'justify-content': 'center',
+    'align-items': 'center',
   }
 
-  for (const key in styles) {
-    const value = styles[key];
-    icon.style[key] = value
+  for (const key in linkStyles) {
+    link.style[key] = linkStyles[key]
+  }
+
+  const icon = document.createElement('i')
+  icon.classList.add('mdi', 'mdi-github')
+
+  const iconStyles = {
+    'font-size': '2rem',
+    color: 'white',
+    'margin-bottom': 0
+  }
+
+  for (const key in iconStyles) {
+    icon.style[key] = iconStyles[key]
   }
 
   link.append(icon)
